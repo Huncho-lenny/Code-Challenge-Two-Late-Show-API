@@ -1,7 +1,7 @@
 from sqlalchemy.orm import validates 
 from . import db
 
-class Apperance (db.Model):
+class Appearance(db.Model):
     __tablename__ = "appearances"
 
     id = db.Column(db.Integer, primary_key=True)

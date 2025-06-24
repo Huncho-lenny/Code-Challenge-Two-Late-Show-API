@@ -2,7 +2,7 @@ from . import db, SerializerMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 
 class User(db.Model, SerializerMixin):
-    __tablename__= "users"
+    __tablename__ = "users"
 
     serialize_rules = ('-appearances.user', '-password_hash',)
 
