@@ -9,7 +9,7 @@ from app import app
 from models import db, Guest, Episode, Appearance, User
 
 fake = Faker()
-config
+
 with app.app_context():
     print("Seeding realistic data...")
 
