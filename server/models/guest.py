@@ -1,4 +1,4 @@
-from config import db 
+from . import db 
 
 class Guest(db.model):
     __tablename__ = "guests"

@@ -1,5 +1,5 @@
 from sqlalchemy.orm import validates 
-from config import db
+from . import db
 
 class Apperance (db.Model):
     __tablename__ = "appearances"
