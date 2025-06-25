@@ -7,14 +7,22 @@ from flask_migrate import Migrate
 from flask_jwt_extended import JWTManager, get_jwt
 from config import Config
 from models import db
-from models import Guest, Episode, Appearance, User, TokenBlocklist
-from controllers import guest_bp, episode_bp, appearance_bp, auth_bp
+from models.appearance import Appearance
+from models.guest import Guest
+from models.episode import Episode
+from models.user import User
+from models.token_blocklist import TokenBlocklist
+from controllers.appearance_controller import appearance_bp
+from controllers.guest_controller import guest_bp
+from controllers.episode_controller import episode_bp
+from controllers.auth_controller import auth_bp
 
 app = Flask(__name__)
 app.config.from_object(Config)
 
-db.init_app(app)
 migrate = Migrate(app, db)
+db.init_app(app)
+
 jwt = JWTManager(app)
 
 app.register_blueprint(guest_bp)
@@ -56,7 +64,7 @@ def jwt_invalid_token(error):
 def jwt_missing_token(error):
     return make_response(jsonify({"error": "Missing token"}), 401)
 
-@app.errorhandler(ExpiredSignatureError)
+# @app.errorhandler(ExpiredSignatureError)
 
 @app.route('/')
 def index():

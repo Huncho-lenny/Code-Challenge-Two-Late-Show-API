@@ -1,12 +1,15 @@
 from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
+
+
+# from controllers.guest_controller import guest_bp
+# from controllers.episode_controller import episode_bp
+# from controllers.appearance_controller import appearance_bp
+# from controllers.auth_controller import auth_bp
 
 
 db = SQLAlchemy()
-migrate = Migrate()
+# migrate = Migrate()
 
-from .guest import Guest
-from .episode import Episode
-from .appearance import Appearance
-from .user import User
-from .token_blocklist import TokenBlocklist
+
+
+# __all__ = ['guest_bp', 'episode_bp', 'appearance_bp', 'auth_bp']
