@@ -16,6 +16,7 @@ from controllers.appearance_controller import appearance_bp
 from controllers.guest_controller import guest_bp
 from controllers.episode_controller import episode_bp
 from controllers.auth_controller import auth_bp
+from config import Config
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -33,6 +34,10 @@ app.register_blueprint(auth_bp)
 @app.errorhandler(404)
 def not_found_error(e):
     return make_response(jsonify({"error": "Resource not found"}), 404)
+
+@app.route('/')
+def home():
+    return {"message": "Late Show API is running "}
 
 @app.errorhandler(405)
 def method_not_allowed_error(e):
