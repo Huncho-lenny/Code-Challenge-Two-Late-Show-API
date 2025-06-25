@@ -1,1 +1,14 @@
 Single-database configuration for Flask.
+# Late Show API
+
+A RESTful Flask API for managing users, guests, episodes, and appearances on a late-night talk show. Includes user authentication with JWT.
+
+---
+
+##  Setup Instructions
+
+### 1. Clone the repo
+```bash
+git clone <your-repo-url>
+cd Code-Challenge-Two-Late-Show-API/server
+
